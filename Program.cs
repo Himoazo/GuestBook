@@ -24,11 +24,13 @@ while(true)
     switch(userChoice)
     {
         case '1': // Skrive i gästboken
-            //CursorVisible = true;
+            Clear();
             Write("Skriv namnet på inläggsskrivaren: ");
             string? authorInput = ReadLine(); // Read user input
+            
             Write("Skriv inlägg: ");
             string? textInput = ReadLine(); // Read user input
+            
             if(!string.IsNullOrWhiteSpace(textInput) && !string.IsNullOrWhiteSpace(authorInput)) //Check if input exist 
             {
                 guestbook.writePost(authorInput, textInput); // Call writePost method from GustBook type
@@ -41,6 +43,7 @@ while(true)
             }
             break;
         case '2': // Ta bort inlägg
+            Clear();
             CursorVisible = true;
             WriteLine("Ange inläggets nummer som du vill radera: ");
             string? index = ReadLine();
@@ -59,6 +62,7 @@ while(true)
             }
             break;
         case 88:
+            Clear();
             Environment.Exit(0); // Exit program
             break;
     }
